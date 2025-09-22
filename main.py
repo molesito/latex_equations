@@ -45,7 +45,6 @@ LATEX_END = r"""
 """
 
 def make_equation_block(eq: str, add_pagebreak: bool) -> str:
-    # Renderizamos tal cual (eq ya viene con $...$ o \[...\])
     rendered = eq
 
     block = textwrap.dedent(rf"""
@@ -55,9 +54,9 @@ def make_equation_block(eq: str, add_pagebreak: bool) -> str:
 
     \vspace{{0.4em}}
     \textbf{{LaTeX literal:}}
-    \begin{verbatim}
+    \\begin{{verbatim}}
 {eq}
-    \end{verbatim}
+    \\end{{verbatim}}
     \vspace{{0.8em}}
     %%%%%% Equation Block End %%%%%%
     """)
